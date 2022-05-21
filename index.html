@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Learn Tailwind Css</title>
+    
+</head>
+<body class="bg-white dark:bg-slate-900">
+
+    <header>
+        <nav class="bg-black p-5 fixed w-full mt-0">
+            <h2 class="text-4xl font-black text-center bg-gradient-to-br from-yellow-300 to-yellow-800 text-transparent bg-clip-text"> LET'S CHAT</h2>
+        </nav>
+    </header>
+
+    <!-- papar darkmode button -->
+    <div class="pt-24 flex justify-end">
+        <span class="mr-2 text-black font-bold dark:text-blue-400">light</span>
+        <input type="checkbox" id="toggle" class="hidden">
+        <label for="toggle">
+            <div class="w-9 h-5 bg-slate-400 rounded-full flex items-center p-1">
+                <div class="w-4 h-4 bg-white rounded-full toggle-circle dark:bg-blue-800"></div>
+            </div>
+        </label>
+        <span class="mr-4 text-black ml-2 font-bold dark:text-blue-400">dark</span>
+    </div>
+    <!-- papar darkmode button END -->
+
+
+
+    <!-- papar update nama -->
+    <section>
+        <div class="pt-6 flex justify-center mx-auto">
+        <form class="nama-baru">
+            <label for="update" class="text-sm font-extrabold text-black dark:text-blue-400">Tukar Nama :</label>
+            <input type="text" id="update" placeholder="masukkan nama" id="nama" class="ring-2 ring-black focus:ring-2 focus:outline-none focus:ring-green-400 rounded-md ml-2">
+            <input type="submit" value="tukar" class="bg-blue-400 rounded-full text-sm p-2 ml-2 hover:text-white hover:ring-2 hover:ring-blue-500 hover:bg-blue-700 cursor-pointer">
+        </form> 
+        </div>
+    </section>
+    <!-- papar update nama END -->
+    
+
+    <!-- papar channel room -->
+    <section>
+        <div class="chat-rooms">
+            <div class="my-2 ">
+                <h2 class="text-center font-extrabold text-black dark:text-blue-400">Choose a chatroom:</h2>
+            </div>
+            <div class="flex justify-center gap-2">
+                <button class="bg-green-400 rounded-full p-2 font-mono" id="general">general</button>
+                <button class="bg-red-400 rounded-full p-2 font-mono" id="gaming">gaming</button>
+                <button class="bg-violet-400 rounded-full p-2 font-mono" id="music">music</button>
+                <button class="bg-blue-400 rounded-full p-2 font-mono" id="ninjas">adamu</button>
+            </div>
+        </div>
+    </section>
+    <!-- papar channel room END -->
+
+
+    <!-- papar nama user dan chat -->
+    <section class="container mx-auto px-6 mt-2">
+        <div class="bg-slate-400 max-w-xl mx-auto rounded-t-md">
+            <header class="ml-2">
+                <h2>
+                    Your Name :
+                </h2>
+            </header>
+            <hr class="border-black">
+        </div>
+        <div>
+            <div class="scroll shadow-xl max-w-xl h-96 bg-white mx-auto overflow-auto rounded-b-md">
+                    <ul class="chat senarai p-2">
+                    </ul>
+                <div></div>
+            </div>
+        </div>
+    </section>
+    <!-- papar nama user dan chat END -->
+
+    <!-- papar message user -->
+    <section class="mt-4">
+        <div class="flex justify-center">
+            <form class="mesejj w-full max-w-md">
+                    <input type="text" placeholder="Type your message" name="mesej" class="w-full ring-2 ring-black rounded-md focus:outline-none focus:ring-green-500" required>
+                    <div class="flex justify-center mt-2">
+                    <input type="submit" value="hantar" class="bg-blue-400 rounded-full text-sm p-2 ml-2 hover:text-white hover:ring-2 hover:ring-blue-500 hover:bg-blue-700 cursor-pointer">
+                    </div>
+            </form>
+        </div>
+    </section>
+    <!-- papar message user END -->
+
+    <!-- papar footer -->
+    <footer class="mt-28 p-2">
+        <div class="text-center">
+            <p class="text-md font-bold text-black dark:text-white">Created by Adamu ❤</p>
+        </div>
+    </footer>
+    <!-- papar footer END -->
+
+    <!-- script javascript -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/date-fns/1.30.1/date_fns.min.js"></script> -->
+
+    <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-firestore.js"></script>
+    <script>
+      // Initialize Firebase
+      const config = {
+      apiKey: "AIzaSyBYUhR4puVDqd8zAWSdlxEO0EyFp-gdzTs",
+      authDomain: "lets-chat-2f966.firebaseapp.com",
+      projectId: "lets-chat-2f966",
+      storageBucket: "lets-chat-2f966.appspot.com",
+      messagingSenderId: "925640696740",
+      appId: "1:925640696740:web:4474b5456b51e1c8eb1731",
+      measurementId: "G-9YB9DMQRVJ"
+      };
+      firebase.initializeApp(config);
+      const db = firebase.firestore();
+    </script>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="scripts/chat.js"></script>
+    <script src="scripts/ui.js"></script>
+    <script src="scripts/apps.js"></script>
+    <!-- script javascript END -->
+</body>
+</html>
+
+
+
+
+
+
+
+<!-- 
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyBYUhR4puVDqd8zAWSdlxEO0EyFp-gdzTs",
+      authDomain: "lets-chat-2f966.firebaseapp.com",
+      projectId: "lets-chat-2f966",
+      storageBucket: "lets-chat-2f966.appspot.com",
+      messagingSenderId: "925640696740",
+      appId: "1:925640696740:web:4474b5456b51e1c8eb1731",
+      measurementId: "G-9YB9DMQRVJ"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script> -->
